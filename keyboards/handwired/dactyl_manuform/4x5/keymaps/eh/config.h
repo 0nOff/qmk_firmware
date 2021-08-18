@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* Use I2C or Serial, not both */
+
 #define USE_SERIAL
 // #define USE_I2C
 
@@ -30,15 +31,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 #define EE_HANDS
 
-// Underglow
-
-#define RGB_DI_PIN D3
-#define RGBLED_NUM 12    // Number of LEDs
-#define RGBLED_SPLIT { 6, 6 }
-#define RGBLIGHT_SLEEP
-#define RGBLIGHT_LIMIT_VAL 150
-
-#define RGBLIGHT_ANIMATIONS
-//#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_MOOD
+/* Encoder support */
+#define ENCODERS_PAD_A { F5 }
+#define ENCODERS_PAD_B { F4 }
+#define ENCODERS_PAD_A_RIGHT { F4 }
+#define ENCODERS_PAD_B_RIGHT { F5 }
+#define ENCODER_RESOLUTION 2
+#define ENCODER_DIRECTION_FLIP
 
