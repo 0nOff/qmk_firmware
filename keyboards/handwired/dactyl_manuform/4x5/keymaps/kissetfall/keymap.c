@@ -31,13 +31,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Base (qwerty)
 
 [_BASE] = LAYOUT( \
-  KC_Q, KC_W,   KC_E,   KC_R, KC_T,                                KC_Y, KC_U, KC_I,    KC_O,   KC_P,    \
-  KC_A, KC_S,   KC_D,   KC_F, KC_G,                                KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, \
-  KC_Z, KC_X,   KC_C,   KC_V, KC_B,                                KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, \
-        KC_GRV, KC_TAB,                                                        KC_LBRC, KC_RBRC,         \
-                              KC_LCTL,    ____,           ____,    KC_RSFT,                              \
-                              KC_DEL,     RAISE,          LOWER,   KC_PGUP,                              \
-                              C(KC_LALT), KC_LALT,        KC_RGUI, KC_PGDN
+  KC_Q, KC_W,   KC_E,   KC_R, KC_T,                             KC_Y, KC_U, KC_I,    KC_O,   KC_P,    \
+  KC_A, KC_S,   KC_D,   KC_F, KC_G,                             KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, \
+  KC_Z, KC_X,   KC_C,   KC_V, KC_B,                             KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, \
+        KC_GRV, KC_TAB,                                                     KC_LBRC, KC_RBRC,         \
+                              KC_LCTL, ____,           ____,    KC_RSFT,                              \
+                              KC_DEL,  RAISE,          LOWER,   C(KC_RIGHT),                          \
+                              KC_LGUI, KC_LALT,        KC_MPLY, C(KC_LEFT)
 ),
 
 // Raise
@@ -48,20 +48,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F1,  KC_F2,   KC_F3,   KC_F4,  KC_F5,                       KC_F6,   KC_F7,   KC_F8,  KC_F9,    KC_F10, \
           KC_TILD, KC_CAPS,                                                        KC_F11, KC_F12,           \
                                     ____, ____,          ____,   ____,                                       \
-                                    ____,  ____,         ADJUST, C(KC_RIGHT),                                \
-                                    RESET, ____,         ____,   C(KC_LEFT)                                  \
+                                    ____,  ____,         ADJUST, KC_PGUP,                                    \
+                                    RESET, ____,         ____,   KC_PGDN                                     \
 ),
 
 // Lower
 
 [_LOWER] = LAYOUT( \
   KC_EXLM, KC_AT,  KC_HASH, KC_DLR, KC_PERC,                       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, \
-  KC_ESC,  KC_SPC, KC_LSFT, KC_ENT, KC_BSPC,                       KC_MINS, KC_EQL,  KC_BSLS, ____,    KC_QUOT, \
-  ____,    KC_INS, KC_HOME, KC_END, KC_PSCR,                       KC_UNDS, KC_PLUS, KC_PIPE, ____,    KC_DQUO, \
-           ____,   ____,                                                             KC_LCBR, KC_RCBR,          \
-                                    ____, ____,              ____, ____,                                        \
-                                    ____, ADJUST,            ____, ____,                                        \
-                                    ____, ____,              ____, RESET                                        \
+  KC_ESC,  KC_SPC, KC_LSFT,  KC_ENT, KC_BSPC,                      KC_MINS, KC_EQL,  KC_BSLS, ____,    KC_QUOT, \
+  ____,    ____,   ____,    ____,   ____,                          KC_UNDS, KC_PLUS, KC_PIPE, ____,    KC_DQUO, \
+                   ____,    ____,                                                    KC_LCBR, KC_RCBR,          \
+                                    ____,       ____,        ____, ____,                                        \
+                                    ____,       ADJUST,      ____, ____,                                        \
+                                    C(KC_LALT), ____,        ____, RESET                                        \
 ), 
 
 // Adjust
@@ -122,4 +122,3 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     return true;
 }
 #endif
-
